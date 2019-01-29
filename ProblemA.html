@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+</head>
+<body align = "center">
+	<input type = "number" placeholder="0" id= "ndisplay">
+
+	<br>
+	<br>
+	
+	<button onclick = "InputNumber(this)">1</button>
+	<button  onclick = "InputNumber(this)">2</button>
+	<button  onclick = "InputNumber(this)">3</button>
+	<button  onclick = "InputNumber(this)">4</button>
+	<button  onclick = "InputNumber(this)">5</button>
+	<br>
+	<br>
+	<button  onclick = "InputNumber(this)">6</button>
+	<button  onclick = "InputNumber(this)">7</button>
+	<button  onclick = "InputNumber(this)">8</button>
+	<button  onclick = "InputNumber(this)">9</button>
+	<button  onclick = "InputNumber(this)">0</button>
+	<br>
+	<br>
+	<button id = "nplus" onclick= "Add()">+</button>
+	<button id = "nsubtract" onclick = "Subtract()">-</button>
+	<button id = "nminus" onclick = "Multiply()">*</button>
+	<button id = "ndivide" onclick = "Divide()">/</button>
+	<br>
+	<br>
+	<button id = "nresult"onclick = "Result()">=</button>
+	<button id = "nclear" onclick = "Clear()">c</button>
+	<button id = "nmodulo" onclick = "Modulo()">%</button>
+	<button id = nexponent" onclick = "Exponent()">x</button>
+	<br>
+	<br>
+	<button id = "nbackspace" onclick = "BackSpace()">BACKSPACE</button>
+
+	
+	<script type="text/javascript">
+
+	let n = document.getElementById('ndisplay');
+	let numberHolder = parseInt(n.value);
+	let optr;
+	
+	function InputNumber(e){
+		n.value = e.innerHTML;
+	}
+
+	function Add(){
+	optr = "+";
+	numberHolder = parseInt(n.value);
+	n.value = "";
+	}
+
+	function Subtract(){
+	optr = "-";
+	numberHolder = parseInt(n.value);
+	n.value = "";		
+	}
+
+	function Multiply(){
+	optr = "*";
+	numberHolder = parseInt(n.value);
+	n.value = "";
+	}
+
+	function Divide(){
+	optr = "/";
+	numberHolder = parseInt(n.value);
+	n.value = "";
+	}
+
+	function Modulo () {
+	optr = "%";
+	numberHolder = parseInt(n.value);
+	n.value = "";
+	}
+
+
+	function Result() {
+	
+	switch(optr) {
+		case "+":
+		n.value = numberHolder + parseInt(n.value);
+		break;
+
+		case "-":
+		n.value = numberHolder - parseInt(n.value);
+		break;
+
+		case "*":
+		n.value = numberHolder * parseInt(n.value);
+		break;
+
+		case "/":
+		n.value = numberHolder / parseInt(n.value);
+		break;
+
+		case "%":
+		n.value = numberHolder % parseInt(n.value);
+		break;
+
+	default:
+		console.log('no operator defined');
+		break;
+
+		}
+	}
+
+
+	function Clear(){
+	n.value = "";
+	}
+
+	</script>
+
+
+	
+
+
+
+
+
+
+
+</body>
+</html>
